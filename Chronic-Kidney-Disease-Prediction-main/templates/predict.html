@@ -1,0 +1,68 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="utf-8">
+    <title>Prediction Result</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            margin: 40px;
+            background: #f7f7f7;
+        }
+        .card {
+            max-width: 500px;
+            margin: auto;
+            background: white;
+            padding: 25px 30px;
+            border-radius: 12px;
+            box-shadow: 0px 4px 15px rgba(0,0,0,0.1);
+        }
+        h1 {
+            text-align: center;
+        }
+        .result {
+            font-size: 22px;
+            font-weight: bold;
+            color: #333;
+        }
+        .positive {
+            color: red;
+        }
+        .negative {
+            color: green;
+        }
+        .back {
+            text-align: center;
+            margin-top: 20px;
+        }
+        a {
+            text-decoration: none;
+            padding: 10px 18px;
+            background: #007BFF;
+            color: white;
+            border-radius: 6px;
+        }
+    </style>
+</head>
+<body>
+
+<div class="card">
+    <h1>Kidney Disease Prediction</h1>
+
+    {% if pred_value == 0 %}
+        <p class="result positive">{{ pred_label }}</p>
+    {% else %}
+        <p class="result negative">{{ pred_label }}</p>
+    {% endif %}
+
+    {% if proba %}
+        <p><strong>Model Confidence:</strong> {{ proba|round(2) }} %</p>
+    {% endif %}
+
+    <div class="back">
+        <a href="/">⬅ Back</a>
+    </div>
+</div>
+
+</body>
+</html>

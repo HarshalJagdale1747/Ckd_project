@@ -1,0 +1,120 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="utf-8">
+    <title>Kidney Disease Prediction</title>
+
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            margin: 20px;
+            max-width: 700px;
+        }
+        label {
+            display: block;
+            margin-top: 12px;
+            font-weight: bold;
+        }
+        input, select {
+            width: 100%;
+            padding: 8px;
+            margin-top: 4px;
+        }
+        button {
+            margin-top: 20px;
+            padding: 10px 20px;
+            font-size: 16px;
+        }
+    </style>
+
+</head>
+
+<body>
+
+<h1>Kidney Disease Predictor</h1>
+
+{% if message %}
+<p style="color: red;">{{ message }}</p>
+{% endif %}
+
+<form action="/predict" method="post">
+
+    <!-- Numerical + categorical fields from dataset -->
+    <label>age</label>
+    <input type="number" step="any" name="age" required>
+
+    <label>bp (blood pressure)</label>
+    <input type="number" step="any" name="bp" required>
+
+    <label>sg (specific gravity)</label>
+    <input type="number" step="any" name="sg" required>
+
+    <label>al (albumin)</label>
+    <input type="number" step="any" name="al" required>
+
+    <label>su (sugar)</label>
+    <input type="number" step="any" name="su" required>
+
+    <label>rbc (red blood cells)</label>
+    <input type="text" name="rbc" required placeholder="normal/abnormal">
+
+    <label>pc (pus cell)</label>
+    <input type="text" name="pc" required placeholder="normal/abnormal">
+
+    <label>pcc (pus cell clumps)</label>
+    <input type="text" name="pcc" required placeholder="present/notpresent">
+
+    <label>ba (bacteria)</label>
+    <input type="text" name="ba" required placeholder="present/notpresent">
+
+    <label>bgr (blood glucose random)</label>
+    <input type="number" step="any" name="bgr" required>
+
+    <label>bu (blood urea)</label>
+    <input type="number" step="any" name="bu" required>
+
+    <label>sc (serum creatinine)</label>
+    <input type="number" step="any" name="sc" required>
+
+    <label>sod (sodium)</label>
+    <input type="number" step="any" name="sod" required>
+
+    <label>pot (potassium)</label>
+    <input type="number" step="any" name="pot" required>
+
+    <label>hemo (hemoglobin)</label>
+    <input type="number" step="any" name="hemo" required>
+
+    <label>pcv (packed cell volume)</label>
+    <input type="number" step="any" name="pcv" required>
+
+    <label>wc (white blood cell count)</label>
+    <input type="number" step="any" name="wc" required>
+
+    <label>rc (red blood cell count)</label>
+    <input type="number" step="any" name="rc" required>
+
+    <label>htn (hypertension)</label>
+    <input type="text" name="htn" required placeholder="yes/no">
+
+    <label>dm (diabetes mellitus)</label>
+    <input type="text" name="dm" required placeholder="yes/no">
+
+    <label>cad (coronary artery disease)</label>
+    <input type="text" name="cad" required placeholder="yes/no">
+
+    <label>appet (appetite)</label>
+    <input type="text" name="appet" required placeholder="good/poor">
+
+    <label>pe (pedal edema)</label>
+    <input type="text" name="pe" required placeholder="yes/no">
+
+    <label>ane (anemia)</label>
+    <input type="text" name="ane" required placeholder="yes/no">
+
+    <!-- Submit button -->
+    <button type="submit">Predict</button>
+</form>
+
+</body>
+</html>
