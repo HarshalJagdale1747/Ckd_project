@@ -52,7 +52,6 @@ The dataset was used from Kaggle.
 
 
 
-![image](https://static.vecteezy.com/system/resources/previews/002/756/180/original/computer-error-screen-a-man-s-face-with-a-broken-facial-expression-is-floating-in-a-pop-up-window-hand-drawn-style-design-illustrations-vector.jpg)
 
 
 CREATED BY HARSHAL J. JAGDALE
